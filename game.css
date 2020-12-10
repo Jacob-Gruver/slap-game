@@ -2,3 +2,20 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 header{ min-height: 8vh; }
 main{flex-grow: 1;} 
 footer{ min-height: 8vh;}
+
+.healthBar
+{
+  border-color: rgb(136, 0, 0);
+  border-style: solid;
+  border-width: 2px;
+  width: 200px;
+  height:20px;
+}
+.healthPercent
+{
+  margin: 0px;
+  background-color: red;
+  
+  height: 16px;
+  /* width: % for health*/
+}

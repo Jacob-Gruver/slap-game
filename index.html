@@ -9,9 +9,14 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="game.css">
   </head>
   <body>
+    <audio loop autoplay>
+        <source src="cool_tunes.wav" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio>
       <header class="container-fluid">
           <div class="row">
               <div class="col">
@@ -24,22 +29,43 @@
       <main class="container-fluid">
           <div class="row">
               <div class="col">
+                  <div class="healthBar">
+                      <div class="healthPercent" id="health-percent"">
+                      </div>
+                    </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
                 <img src="targetMan.png">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <i class="fa fa-fire" id="fire-icon" aria-hidden="true"></i>
+                  <i class="fa fa-tint" id="water-icon" aria-hidden="true"></i>
+                  <i class="fa fa-cog" id="metal-icon" aria-hidden="true"></i>
               </div>
           </div>
       </main>
       <footer class="container-fluid">
           <div class="row">
               <div class="col" id="items">
-                <button onclick="giveFire()">Fire Powerup</button>
-                <button onclick="giveWater()">Water Powerup</button>
-                <button onclick="giveMetal()">Metal Powerup</button>
+                <button id="fire" onclick="giveFire()">Fire Powerup</button>
+                <button id="water" onclick="giveWater()">Water Powerup</button>
+                <button id="metal" onclick="giveMetal()">Metal Powerup</button>
                   
               </div>
               <div class="col">
-                  <button onclick="slap()">Slap</button>
-                  <button onclick="punch()">Punch</button>
-                  <button onclick="kick()">Kick</button>
+                  <button id="slap" onclick="slap()">Slap</button>
+                  <button id="punch" onclick="punch()">Punch</button>
+                  <button id="kick" onclick="kick()">Kick</button>
+              </div>
+              <div class="col">
+                  <button onclick="resetGame()">Reset Game</button>
+              </div>
+              <div class="col-6">
+                <h3 id="message" class=" text-success"></h3>
               </div>
           </div>
       </footer>
